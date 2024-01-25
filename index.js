@@ -19,7 +19,6 @@ export function createTextLineAnimation(typeClass, el, start = "50% 50%") {
     tl.from(`${typeClass} .ttl-cover`, {
       x: "-100%",
       ease: "power4.out",
-      delay: 3,
     });
   } else {
     tl.from(`${typeClass} .ttl-cover`, {
