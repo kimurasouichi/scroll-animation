@@ -1,0 +1,32 @@
+@use "./variables" as *;
+@use "./mq" as *;
+
+.background-set {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h-content-width {
+  @include mq(md) {
+    max-width: $contentMaxWidth-770;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  @include mq(lg) {
+    max-width: $contentMaxWidth-1300;
+  }
+}
+
+.content-width {
+  @include mq(md) {
+    max-width: $contentMaxWidth-770;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  @include mq(lg) {
+    max-width: $contentMaxWidth-1150;
+  }
+}

@@ -1,0 +1,192 @@
+@use "./globals/" as *;
+
+body {
+  color: $cWhite;
+  font-family: "Yu Mincho", "MS PMincho", serif;
+}
+
+.wrap {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.animation-box {
+  &__inner {
+    height: 100%;
+    row-gap: 50px;
+    justify-content: center;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 2rem;
+  //  position: fixed;
+  //  top: 0;
+  //  left: 0;
+  //  right: 0;
+  background-color: #fffffff6;
+  color: #333;
+  //  z-index: 9999;
+}
+
+.content {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 80px;
+
+  h2 {
+    overflow: hidden;
+    z-index: 10;
+    color: $cWhite;
+
+
+    @include mq(md) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 120%;
+      font-size: 26px;
+      display: flex;
+      height: 40px;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 10px;
+    }
+
+    @include mq(lg) {
+      font-size: 2rem;
+      height: 50px;
+    }
+  }
+
+  p {
+    overflow: hidden;
+
+    @include mq(md) {
+      font-size: 12px;
+    }
+
+    @include mq(lg) {
+      font-size: 16px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+
+  &__inner {
+    max-width: 800px;
+
+    @include mq(lg) {
+      max-width: 1000px;
+    }
+  }
+
+  &__wrapper {
+    @include mq(md) {}
+  }
+
+  &__wrap {
+    &:nth-of-type(even) {
+      @include mq(md) {
+        margin-left: auto;
+
+        .content {
+          &__box {
+            justify-content: space-between;
+          }
+
+          &__img {
+            order: 2;
+            margin-left: auto;
+            z-index: 0;
+          }
+
+          &__txt {
+            order: 1;
+            right: auto;
+
+            h2 {
+              padding-right: 10px;
+              justify-content: flex-end;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    @include mq(md) {
+      position: relative;
+      width: 80%;
+      max-width: 680px;
+    }
+
+    @include mq(lg) {
+      max-width: 800px;
+    }
+  }
+
+  &__box {
+    @include mq(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+
+    @include mq(md) {
+      width: 60%;
+      aspect-ratio: 1/0.6;
+    }
+
+    span {
+      position: absolute;
+      width: 150%;
+      height: 200%;
+      background: #000;
+
+      &:nth-child(1) {
+        right: 0;
+        bottom: 0;
+        background: #ccd3ca;
+        transform: skew(45deg);
+      }
+
+      &:nth-child(2) {
+        right: 0;
+        top: 0;
+        background: #b5c0d0;
+        transform: skew(-120deg);
+      }
+    }
+  }
+
+  &__txt {
+    @include mq(md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 38%;
+      height: 100%;
+    }
+  }
+}
+
+footer {
+  height: 150px;
+  background: $cWhite;
+}
