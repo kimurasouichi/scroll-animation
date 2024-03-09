@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger); // プラグイン登録
