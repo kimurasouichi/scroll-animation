@@ -1,3 +1,4 @@
+import "./index.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger); // プラグイン登録
@@ -52,13 +53,10 @@ export function createTextLineAnimation(typeClass, el, start = "50% 50%") {
       ease: "power4.out",
       // delay: 1,
     })
-    .to(
-      `${typeClass} .span-top`,
-      {
-        x: "100%", // translateX(100%)をGSAP形式に変更
-        // skewX: "45deg", // skew(45deg)をskewXとして正しく指定
-      },
-    )
+    .to(`${typeClass} .span-top`, {
+      x: "100%", // translateX(100%)をGSAP形式に変更
+      // skewX: "45deg", // skew(45deg)をskewXとして正しく指定
+    })
     .to(
       `${typeClass} .span-under`,
       {
@@ -68,4 +66,3 @@ export function createTextLineAnimation(typeClass, el, start = "50% 50%") {
       "<"
     );
 }
-
