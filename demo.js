@@ -52,10 +52,14 @@ export function createTextLineAnimation(typeClass, el, start = "50% 50%") {
       ease: "power4.out",
       // delay: 1,
     })
-    .to(`${typeClass} .span-top`, {
-      x: "100%", // translateX(100%)をGSAP形式に変更
-      // skewX: "45deg", // skew(45deg)をskewXとして正しく指定
-    })
+    .to(
+      `${typeClass} .span-top`,
+      {
+        x: "100%", // translateX(100%)をGSAP形式に変更
+        // skewX: "45deg", // skew(45deg)をskewXとして正しく指定
+      },
+      "-=0.3"
+    )
     .to(
       `${typeClass} .span-under`,
       {
